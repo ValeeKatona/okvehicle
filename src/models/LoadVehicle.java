@@ -25,13 +25,13 @@ public class LoadVehicle {
     ArrayList<String> vehicles;
 
     public LoadVehicle() {
-        vehicles = new ArrayList<>();
+        initVehicleList();
     }
 
-    private ArrayList<Vehicle> tryload() throws FileNotFoundException {
+    private ArrayList<Vehicle> tryLoad() throws FileNotFoundException {
         FileReader fileReader = new FileReader("data.txt");
         Scanner scanner = new Scanner(fileReader);
-        ArrayList<Vehicle> vehicleList = new ArrayList<>();
+        ArrayList<Vehicle> vehicleList = fillList(scanner);
         return vehicleList;
     }
 

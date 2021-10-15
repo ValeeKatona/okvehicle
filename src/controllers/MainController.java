@@ -51,13 +51,13 @@ public class MainController {
     }
 
     private void initDelButton() {
-        this.mainWindow.delButton.addActionListener(-> {
+        this.mainWindow.delButton.addActionListener(event -> {
             System.out.println("Törlés...");
         });
     }
 
     private void initSaveButton() {
-        this.mainWindow.saveButton.addActionListener(-> {
+        this.mainWindow.saveButton.addActionListener(event -> {
             System.out.println("Mentés..");
         });
     }
