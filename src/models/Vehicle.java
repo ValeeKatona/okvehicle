@@ -4,6 +4,7 @@
  * Author: Katona Valentin
  * Original: Sallai Andras
  * Github: https://github.com/djvalee
+ * Class: Szoftverfejleszto/Nappali/II
  * -----
  * Last Modified: 2021-10-15
  * Modified By: Katona Valentin

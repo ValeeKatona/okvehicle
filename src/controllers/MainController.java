@@ -4,6 +4,7 @@
  * Author: Katona Valentin
  * Original: Sallai Andras
  * Github: https://github.com/djvalee
+ * Class: Szoftverfejleszto/Nappali/II
  * -----
  * Last Modified: 2021-10-15
  * Modified By: Katona Valentin
@@ -15,41 +16,25 @@
 
 package controllers;
 
-// importáljuk az ArrayList osztály:
 import java.util.ArrayList;
-
-// Importáljuk a LoadVehicle osztály
 import models.LoadVehicle;
-// Importáljuk a Vehicle osztályt
 import models.Vehicle;
-//Importáljuk a MainWindow osztályt
 import views.MainWindow;
 
-/**
- * Azért készítettem ezt a MainControllert, mert 
- * célszerű külön tenni a program vezérlést, 
- * elválasztani a megjelenítéstől és az adatok
- * beszerzésétől. Többrészre bonthattam volna,
- * de az majd ha szükséges lesz megteszem. 
- * Nem szüksége előre felbontani több részre. 
- */
-
 public class MainController {
-    //A mainWindow tagváltozó
     MainWindow mainWindow;
-    //A loadVehicla tagváltozó
     LoadVehicle loadVehicle;
-    //Az oszátly konstruktora
+ 
     public MainController(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
         this.loadVehicle = new LoadVehicle();
-        //járművek listája:
+
         ArrayList<Vehicle> vehicleList = this.loadVehicle.load();
         for(Vehicle vehicle : vehicleList) {
             this.mainWindow.vehicleModel.addRow(
                 new Object[] {vehicle.ordinal, vehicle.brand, vehicle.year}
             );
-        }// A for ciklus vége
+        }
 
          
         //TODO A névtelen metódus tartalmát ki kell szervezni
