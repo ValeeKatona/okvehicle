@@ -1,13 +1,14 @@
 /*
  * File: MainWindow.java
- * Created Date: 2021-09-24 22:18:18
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2021-10-15
+ * Author: Katona Valentin
+ * Original: Sallai Andras
+ * Github: https://github.com/djvalee
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+ * Last Modified: 2021-10-15
+ * Modified By: Katona Valentin
  * -----
- * Copyright (c) 2021 Sallai Andras
+ * Copyright (c) 2021 Katona Valentin
  * 
  * GNU GPL v2
  */

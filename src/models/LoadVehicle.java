@@ -1,13 +1,14 @@
 /*
  * File: LoadVehicle.java
- * Created Date: 2021-09-25 00:46:41
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2021-10-15
+ * Author: Katona Valentin
+ * Original: Sallai Andras
+ * Github: https://github.com/djvalee
  * -----
- * Last Modified: 2021-09-25
- * Modified By: Sallai Andras
+ * Last Modified: 2021-10-15
+ * Modified By: Katona Valentin
  * -----
- * Copyright (c) 2021 Sallai Andras
+ * Copyright (c) 2021 Katona Valentin
  * 
  * GNU GPL v2
  */
