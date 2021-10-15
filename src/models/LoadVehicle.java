@@ -23,31 +23,50 @@ import java.util.Scanner;
 
 public class LoadVehicle {
     ArrayList<String> vehicles;
+
     public LoadVehicle() {
         vehicles = new ArrayList<>();
-    }//A LoadVehicle metódus vége
+    }
 
-    public ArrayList<Vehicle> load(){
-    //A járművek listáját tárlojuk benne:
-    ArrayList<Vehicle> vehicleList = new ArrayList<>();
-    try {
-    FileReader fileReader = new FileReader("data.txt");
-    Scanner scanner = new Scanner(fileReader);
-    //Ciklus amivel bejárjuk a fájlt:
-    while(scanner.hasNext()) {
-    String line = scanner.nextLine();
-    String[] lineArray = line.split(":");
-    Vehicle vehicle = new Vehicle();
-    vehicle.ordinal = lineArray[0];
-    vehicle.brand = lineArray[1];
-    vehicle.year = lineArray[2];
-    vehicleList.add(vehicle);
-    }//while vége
-    scanner.close();
+    private ArrayList<Vehicle> tryload() throws FileNotFoundException {
+        FileReader fileReader = new FileReader("data.txt");
+        Scanner scanner = new Scanner(fileReader);
+        ArrayList<Vehicle> vehicleList = new ArrayList<>();
+        return vehicleList;
+    }
 
-    } catch (FileNotFoundException e) {
-    System.err.println("Hiba! A fájl nem található");
-    }//A try vége
-    return vehicleList;
+    private void initVehicleList() {
+        vehicles = new ArrayList<>();
+
+    }
+
+    public ArrayList<Vehicle> load() {
+        ArrayList<Vehicle> vehicleList = new ArrayList<>();
+        try {
+            vehicleList = tryLoad();
+        } catch (FileNotFoundException e) {
+            System.err.println("Hiba! Nem található a fájl!");
+        }
+        return vehicleList;
+    }
+
+    private ArrayList<Vehicle> fillList(Scanner scanner) {
+        ArrayList<Vehicle> vehicleList = new ArrayList<>();
+        while (scanner.hasNext()); {
+            String line = scanner.nextLine();
+            Vehicle vehicle = initVehicle(line);
+            vehicleList.add(vehicle);
+        }
+        scanner.close();
+        return vehicleList;
+    }
+
+    private Vehicle initVehicle(String line) {
+        String[] lineArray = line.split(":");
+        Vehicle vehicle = new Vehicle();
+        vehicle.ordinal = lineArray[0];
+        vehicle.brand = lineArray[1];
+        vehicle.year = lineArray[2];
+        return vehicle;
     }
 }
